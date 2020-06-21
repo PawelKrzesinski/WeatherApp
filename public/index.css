@@ -13,15 +13,76 @@ html{
 	font-family: 'Titillium Web', sans-serif;
 	letter-spacing: 0.1rem;
 }
-
+h1 {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
 .weather__box{
-	display: block;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 5rem;
 	width: 500px;
 	height: 500px;
 	border: 1px solid black;
-	border-radius: 20%/ 75px;
-	background-color: lightgray;
+	border-radius: 20%/ 100px;
+	background: linear-gradient(45deg, rgb(68, 123, 194) 20%, rgb(75, 11, 105) 80%);
+	color: white;
+	display: flex;
+	text-align: center;
+}
+
+.grid__container{
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: auto;
+	grid-template-areas: 
+	'. timezone timezone .'
+	'. icon icon .'
+	'. desc desc .'
+	'sunrise temp feelslike sunset'
+	'humid pressure pressure speed';
+	justify-items: center;
+	width: 100%;
+	height: 100%;
+}
+
+.icon__image {
+	width: 150px;
+	height: 150px;
+}
+
+
+#timezone{
+	font-size: 1.5rem;
+	grid-area: timezone;
+}
+#icon{
+	grid-area: icon;
+	justify-self: center;
+	height: 150px;
+}
+#desc{
+	grid-area: desc;
+}
+#temp{
+	grid-area: temp ;
+}
+#feels__like{
+	grid-area: feelslike;
+}
+#pressure{
+	grid-area: pressure;
+}
+#sunrise{
+	grid-area: sunrise;
+}
+#sunset{
+	grid-area: sunset;
+}
+#humidity{
+	grid-area: humid;
+}
+#wind__speed{
+	grid-area: speed;
 }
