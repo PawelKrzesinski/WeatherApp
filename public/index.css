@@ -34,15 +34,16 @@ h1 {
 
 .grid__container{
 	display: grid;
-	grid-template-columns: repeat(4, 1fr);
+	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: auto;
 	grid-template-areas: 
-	'. timezone timezone .'
-	'. icon icon .'
-	'. desc desc .'
-	'sunrise temp feelslike sunset'
-	'humid pressure pressure speed';
+	'. timezone .'
+	'sunrise icon sunset'
+	'humid desc speed'
+	'temp pressure feelslike'
+	'. . .';
 	justify-items: center;
+	align-items: center;
 	width: 100%;
 	height: 100%;
 }
