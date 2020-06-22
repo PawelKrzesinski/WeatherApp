@@ -1,4 +1,4 @@
-const API_KEY = "4d2244a3474ed68ea9dcb302b81d1e59";
+const API_KEY = process.env.API_KEY;
 const temp__div = document.getElementById('temp');
 const sunrise__div = document.getElementById('sunrise');
 const sunset__div = document.getElementById('sunset');
