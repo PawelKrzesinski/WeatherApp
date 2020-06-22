@@ -3,7 +3,10 @@ const app = express();
 const fetch = require('node-fetch')
 require('dotenv').config();
 const API_KEY = process.env.API_KEY;
-app.listen(3000, () => console.log("Starting Server : http://localhost:3000"))
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+	console.log(`Starting Server at ${port}`)
+})
 app.use(express.static('public'));
 app.use(express.json({ limit: '1mb' }));
 app.post('/api', (request, response) => {
@@ -29,6 +32,3 @@ app.get('/weather/:latlon', async (request, response) => {
 	console.log(json);
 	
 })
-
-
-
