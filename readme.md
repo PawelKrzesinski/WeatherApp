@@ -1,1 +1,1 @@
-Weather app using HTML, CSS, Javascript and Open Weather Map API
+Weather app using HTML, CSS, Javascript, Node.js and Open Weather Map API
