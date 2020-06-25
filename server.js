@@ -10,7 +10,6 @@ app.listen(port, () => {
 app.use(express.static('public'));
 app.use(express.json({ limit: '1mb' }));
 app.post('/api', (request, response) => {
-	console.log(request.body);
 	const data = request.body;
 	response.json({
 		status: 'success',
@@ -29,6 +28,4 @@ app.get('/weather/:latlon', async (request, response) => {
 	const fetch_response = await fetch(url);
 	const json = await fetch_response.json();
 	response.json(json);
-	console.log(json);
-	
 })
