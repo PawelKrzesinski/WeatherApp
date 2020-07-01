@@ -48,16 +48,16 @@ document.addEventListener('DOMContentLoaded', () => {
 				let information = [sunrise, sunset, desc, weatherIcon, pressure, humidity, feelsLike, windSpeed, timezone, temp]
 				return information;
 			}).then((information) => {
-				sunrise__div.innerHTML = `Sunrise: `+ unixToDate(information[0]);
-				sunset__div.innerHTML = `Sunset: ` + unixToDate(information[1]);
+				sunrise__div.innerHTML = `Sunrise: ${unixToDate(information[0])}`;
+				sunset__div.innerHTML = `Sunset: ${unixToDate(information[1])}`;
 				desc__div.innerHTML = information[2];
-				weatherIcon__div.innerHTML = `<img src='http://openweathermap.org/img/wn/${information[3]}@2x.png' class='icon__image'/>`;
-				pressure__div.innerHTML = `Pressure: ` + information[4] + ` Pa`;
-				humidity__div.innerHTML = `Humidity: ` + information[5] + ` %`;
-				feelsLike__div.innerHTML = `Feels like: ` + information[6] + `&degC`;
-				windSpeed__div.innerHTML = `Wind speed: ` + information[7] + ` m/s`;
+				weatherIcon__div.innerHTML = `<img src='https://openweathermap.org/img/wn/${information[3]}@2x.png' class='icon__image'/>`;
+				pressure__div.innerHTML = `Pressure:  ${information[4]} Pa`;
+				humidity__div.innerHTML = `Humidity: ${information[5]} %`;
+				feelsLike__div.innerHTML = `Feels like: ${Math.round(information[6])} &degC`;
+				windSpeed__div.innerHTML = `Wind speed: ${information[7]} m/s`;
 				timezone__div.innerHTML = information[8];
-				temp__div.innerHTML = `Temp: ` + information[9] + `&degC`;
+				temp__div.innerHTML = `Temp: ${Math.round(information[9])} &degC`;
 				console.log("New Data");
 			})
 			.catch(err => {
