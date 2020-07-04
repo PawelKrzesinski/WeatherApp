@@ -18,18 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
 			lon = position.coords.longitude;
 			lat = position.coords.latitude;
 			let url = `weather/${lat},${lon}`;
-			const items = { lat, lon };
-			const options = {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json'
-				},
-				body: JSON.stringify(items)
-			};
-
-			const response = await fetch('/api', options);
-			const json = await response.json();
-			console.log(json);
 			
 			fetch(url).then(response => {
 				let data = response.json();
